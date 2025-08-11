@@ -3,37 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feedback</title>
+    <title>Feedback Form</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Page Header -->
     <header>
-        <h1>Submit Feedback</h1>
+        <h1>Submit Your Feedback</h1>
         <nav>
-            <a href="index.html" style="color:white;">Home</a> |
-            <a href="analytics.html" style="color:white;">Analytics</a>
+            <a href="index.html">🏠 Home</a>
+            <span> | </span>
+            <a href="analytics.html">📊 Analytics</a>
         </nav>
     </header>
+
     <main>
-        <form id="feedbackForm">
-            <label>Course Name:</label>
-            <select id="courseSelect">
-                <option>JavaScript Basics</option>
-                <option>Python Programming</option>
-                <option>Data Science 101</option>
-            </select>
-            <br><br>
-            <label>Rating (1-5):</label>
-            <input type="number" id="rating" min="1" max="5" required>
-            <br><br>
-            <label>Comment:</label><br>
-            <textarea id="comment" rows="4" cols="30"></textarea>
-            <br><br>
-            <button type="submit">Submit</button>
-        </form>
-        <p id="msg"></p>
+        <!-- Feedback Card -->
+        <section class="feedback-card">
+            <form id="feedbackForm">
+                
+                <!-- Course -->
+                <label for="course">Course Name</label>
+                <select id="course" name="course" required>
+                    <option value="">-- Select a course --</option>
+                    <option value="js">JavaScript Basics</option>
+                    <option value="htmlcss">HTML & CSS</option>
+                    <option value="react">React Fundamentals</option>
+                </select>
+
+                <!-- Rating -->
+                <label for="rating">Rating (1-5)</label>
+                <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+                <!-- Comment -->
+                <label for="comment">Your Comment</label>
+                <textarea id="comment" name="comment" placeholder="What did you think?" rows="4"></textarea>
+
+                <!-- Submit -->
+                <button type="submit" class="glow-btn">Send Feedback 🚀</button>
+            </form>
+        </section>
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>

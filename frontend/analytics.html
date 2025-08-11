@@ -3,26 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytics</title>
+    <title>Course Ratings - Analytics</title>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Course Ratings Analytics</h1>
+    <header class="topbar">
+        <div class="brand">
+            <h1>Student Feedback Analytics</h1>
+            <p class="sub">Track ratings & comments in real-time</p>
+        </div>
         <nav>
-            <a href="index.html" style="color:white;">Home</a> |
-            <a href="feedback.html" style="color:white;">Give Feedback</a>
+            <a href="index.html">🏠 Home</a>
+            <a href="feedback.html">💬 Give Feedback</a>
+            <button id="exportPNG" class="cta">📤 Export</button>
         </nav>
     </header>
-    <main>
-        <canvas id="barChart"></canvas>
-        <canvas id="pieChart" style="margin-top:30px;"></canvas>
+
+    <main class="container">
+        
+        <!-- Filter & Stats -->
+        <section class="controls glass">
+            <div class="select-wrap">
+                <label for="courseSelect">Select Course</label>
+                <select id="courseSelect">
+                    <!-- Populated dynamically -->
+                </select>
+            </div>
+
+            <div class="stat-cards">
+                <div class="stat card-tilt" id="avgCard">
+                    <div class="stat-value" id="avgVal">0</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat card-tilt" id="countCard">
+                    <div class="stat-value" id="totalVal">0</div>
+                    <div class="stat-label">Total Feedback</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts -->
+        <section class="charts">
+            <div class="chart-card card-tilt">
+                <h3>Rating Distribution</h3>
+                <canvas id="barChart" height="180"></canvas>
+            </div>
+
+            <div class="chart-card card-tilt">
+                <h3>Rating Share</h3>
+                <canvas id="pieChart" height="180"></canvas>
+            </div>
+        </section>
+
+        <!-- Comments -->
+        <section class="comments glass" id="commentsSection">
+            <h3>Recent Comments</h3>
+            <div id="commentsList" class="comments-list">
+                <em>No comments yet...</em>
+            </div>
+        </section>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <footer class="footer">
+        <small>Made with ❤️ for Infinite Locus assignment</small>
+    </footer>
+
     <script src="script.js"></script>
-    <script>
-        showCharts();
-    </script>
 </body>
 </html>

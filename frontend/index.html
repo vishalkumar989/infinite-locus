@@ -3,22 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
+    <title>Student Feedback — Courses</title>
+
+    <!-- Fonts -->
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Course List with Ratings</h1>
+
+    <!-- Topbar -->
+    <header class="topbar">
+        <div class="brand">
+            <h1>Courses & Ratings</h1>
+            <p class="sub">Select a course to check analytics or leave feedback</p>
+        </div>
         <nav>
-            <a href="feedback.html" style="color:white;">Give Feedback</a> |
-            <a href="analytics.html" style="color:white;">Analytics</a>
+            <a href="index.html" class="active">🏠 Home</a>
+            <a href="feedback.html">📝 Feedback</a>
+            <a href="analytics.html">📊 Analytics</a>
         </nav>
     </header>
-    <main id="courseList"></main>
+
+    <main class="container">
+
+        <!-- Search & Sort Controls -->
+        <section class="controls glass">
+            <div class="search-wrap">
+                <input type="text" id="searchInput" placeholder="🔍 Search for a course...">
+                <button id="addCourseBtn" class="cta small">+ Add Course</button>
+            </div>
+
+            <div class="filters">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                    <option value="name">Name (A-Z)</option>
+                    <option value="avgDesc">Highest Rated</option>
+                    <option value="countDesc">Most Feedback</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Course List -->
+        <section class="courses-area">
+            <div id="courseList" class="course-grid">
+                <!-- Courses will be injected via JS -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <small>© 2025 Student Feedback Portal — Demo only</small>
+    </footer>
 
     <script src="script.js"></script>
-    <script>
-        displayCourses();
-    </script>
 </body>
 </html>
