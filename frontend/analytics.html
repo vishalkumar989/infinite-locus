@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Course Ratings Analytics</h1>
+        <nav>
+            <a href="index.html" style="color:white;">Home</a> |
+            <a href="feedback.html" style="color:white;">Give Feedback</a>
+        </nav>
+    </header>
+    <main>
+        <canvas id="barChart"></canvas>
+        <canvas id="pieChart" style="margin-top:30px;"></canvas>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <script>
+        showCharts();
+    </script>
+</body>
+</html>
